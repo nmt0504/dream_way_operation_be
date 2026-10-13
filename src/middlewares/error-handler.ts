@@ -1,4 +1,5 @@
 import type { ErrorRequestHandler, RequestHandler } from 'express';
+
 import { env } from '../config/env';
 
 export class HttpError extends Error {
