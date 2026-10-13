@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: dreamway-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dreamway
+      POSTGRES_PASSWORD: dreamway
+      POSTGRES_DB: dreamway_operation
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
