@@ -1,0 +1,4915 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "48cce76a-8172-4ae0-93fb-276e05a832ca",
+  "prevIds": [
+    "ea74d029-e080-42f6-926b-026321d64d91"
+  ],
+  "ddl": [
+    {
+      "name": "core",
+      "entityType": "schemas"
+    },
+    {
+      "values": [
+        "present",
+        "absent",
+        "late"
+      ],
+      "name": "attendance_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "open",
+        "closed"
+      ],
+      "name": "class_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "active",
+        "paused",
+        "ended"
+      ],
+      "name": "enrollment_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "month",
+        "course"
+      ],
+      "name": "fee_cycle",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "co",
+        "thay"
+      ],
+      "name": "honorific",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "auto",
+        "manual"
+      ],
+      "name": "invoice_source",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "unpaid",
+        "partial",
+        "overdue",
+        "paid",
+        "cancelled"
+      ],
+      "name": "invoice_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "cash",
+        "transfer"
+      ],
+      "name": "payment_method",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "pending",
+        "approved"
+      ],
+      "name": "payroll_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "hour",
+        "session"
+      ],
+      "name": "rate_type",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "active",
+        "inactive"
+      ],
+      "name": "record_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "zalo",
+        "sms"
+      ],
+      "name": "reminder_channel",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "queued",
+        "sent",
+        "failed",
+        "cancelled"
+      ],
+      "name": "reminder_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "regular",
+        "makeup",
+        "extra"
+      ],
+      "name": "session_kind",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "scheduled",
+        "cancelled"
+      ],
+      "name": "session_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "active",
+        "left"
+      ],
+      "name": "student_status",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "values": [
+        "admin",
+        "staff",
+        "teacher",
+        "parent",
+        "student"
+      ],
+      "name": "user_role",
+      "entityType": "enums",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "branches",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "settings",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "user_branches",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "users",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "idempotency_keys",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "refresh_tokens",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "class_teachers",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "classes",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "enrollments",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "guardians",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "rooms",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "student_guardians",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "students",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "teachers",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "payroll_items",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "payroll_periods",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "teacher_rates",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "attendance_records",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "class_schedules",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "reminder_messages",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "sessions",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "code_sequences",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "invoices",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "payments",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "audit_logs",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "notifications",
+      "entityType": "tables",
+      "schema": "core"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "branches"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "branches"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "address",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "branches"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "branches"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "true",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'DreamWay'",
+      "generated": null,
+      "identity": null,
+      "name": "center_name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'Asia/Ho_Chi_Minh'",
+      "generated": null,
+      "identity": null,
+      "name": "timezone",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'{}'",
+      "generated": null,
+      "identity": null,
+      "name": "settings",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "updated_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "branch_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "phone",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "username",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "full_name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "user_role",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "role",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "record_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'active'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "password_hash",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "true",
+      "generated": null,
+      "identity": null,
+      "name": "must_change_password",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "smallint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0",
+      "generated": null,
+      "identity": null,
+      "name": "failed_login_count",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "locked_until",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "last_login_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "key",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "request_hash",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "smallint",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "status_code",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "response",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "token_hash",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "expires_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "revoked_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "class_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "teacher_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "branch_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "subject",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "fee_cycle",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'month'",
+      "generated": null,
+      "identity": null,
+      "name": "fee_cycle",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "fee_amount",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "smallint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "10",
+      "generated": null,
+      "identity": null,
+      "name": "due_day",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'#2563EB'",
+      "generated": null,
+      "identity": null,
+      "name": "color",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "class_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'open'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "starts_on",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "ends_on",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "student_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "class_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "start_date",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "end_date",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "enrollment_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'active'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "full_name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "phone",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "zalo_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "branch_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "capacity",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "student_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "guardian_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "relation",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "false",
+      "generated": null,
+      "identity": null,
+      "name": "is_primary",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "code",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "full_name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "''",
+      "generated": null,
+      "identity": null,
+      "name": "search_text",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "dob",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "phone",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "student_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'active'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "full_name",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "honorific",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "honorific",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "subject",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "record_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'active'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "period_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "teacher_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "sessions_count",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "numeric(7,2)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "hours",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "rate_type",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "rate_type",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "rate",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "amount",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "period",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "payroll_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'pending'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "approved_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "approved_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "teacher_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "type": "rate_type",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "rate_type",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "rate",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "effective_from",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "session_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "enrollment_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "student_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "attendance_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'present'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "absence_excused",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "note",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "updated_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "updated_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "class_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "smallint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "weekday",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "time",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "start_time",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "duration_min",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "room_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "teacher_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "valid_from",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "valid_to",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "session_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "student_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "recipient_phone",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "reminder_channel",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "channel",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "scheduled_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "reminder_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'queued'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "smallint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0",
+      "generated": null,
+      "identity": null,
+      "name": "attempts",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "sent_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "error",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "class_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "schedule_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "teacher_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "room_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "starts_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "duration_min",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "session_kind",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'regular'",
+      "generated": null,
+      "identity": null,
+      "name": "kind",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "session_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'scheduled'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "cancel_reason",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "true",
+      "generated": null,
+      "identity": null,
+      "name": "reminder_enabled",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "attendance_taken_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "attendance_taken_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "payroll_period_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "scope",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "code_sequences"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "''",
+      "generated": null,
+      "identity": null,
+      "name": "period",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "code_sequences"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0",
+      "generated": null,
+      "identity": null,
+      "name": "last_no",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "code_sequences"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "code",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "student_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "class_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "enrollment_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "period_start",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "period_end",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "due_date",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "total_amount",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "0",
+      "generated": null,
+      "identity": null,
+      "name": "paid_amount",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "invoice_status",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'unpaid'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "invoice_source",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'auto'",
+      "generated": null,
+      "identity": null,
+      "name": "source",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "note",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "cancelled_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "cancelled_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "cancel_reason",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "created_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "invoice_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "amount",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "payment_method",
+      "typeSchema": "core",
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "method",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "date",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "paid_on",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "receipt_no",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "note",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "collected_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "voided_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "voided_by",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "void_reason",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "type": "bigint",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": {
+        "type": "always",
+        "name": "audit_logs_id_seq",
+        "increment": "1",
+        "startWith": "1",
+        "minValue": "1",
+        "maxValue": "9223372036854775807",
+        "cache": 1,
+        "cycle": false
+      },
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "actor_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "action",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "entity_type",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "entity_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "old_value",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "new_value",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "user_id",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "type",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "title",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "body",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'{}'",
+      "generated": null,
+      "identity": null,
+      "name": "payload",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "read_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "branch_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "user_branches_branch_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "user_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": "\"revoked_at\" IS NULL",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "refresh_tokens_user_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "teacher_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "class_teachers_teacher_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "branch_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "classes_branch_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "student_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "class_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": "\"status\" <> 'ended'",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "enrollments_one_live",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "class_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "enrollments_class_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "phone",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "guardians_phone_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "student_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": "\"is_primary\"",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "student_guardians_one_primary",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "search_text",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": {
+            "name": "gin_trgm_ops",
+            "default": false
+          }
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "gin",
+      "concurrently": false,
+      "name": "students_search_trgm_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "phone",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "students_phone_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "student_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "attendance_student_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "scheduled_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": "\"status\" = 'queued'",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "reminder_queue_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "class_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "sessions_class_time_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "sessions_time_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "teacher_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "sessions_teacher_time_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "room_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "starts_at",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "sessions_room_time_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "enrollment_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "period_start",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": true,
+      "where": "\"cancelled_at\" IS NULL",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "invoices_one_per_period",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "status",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "due_date",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "invoices_list_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "student_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "invoices_student_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "invoice_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "payments_invoice_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "paid_on",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "payments_paid_on_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "entity_type",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "entity_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "audit_entity_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "created_at",
+          "isExpression": false,
+          "asc": false,
+          "nullsFirst": true,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "audit_time_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        {
+          "value": "user_id",
+          "isExpression": false,
+          "asc": true,
+          "nullsFirst": false,
+          "opclass": null
+        },
+        {
+          "value": "created_at",
+          "isExpression": false,
+          "asc": false,
+          "nullsFirst": true,
+          "opclass": null
+        }
+      ],
+      "isUnique": false,
+      "where": "\"read_at\" IS NULL",
+      "with": "",
+      "method": "btree",
+      "concurrently": false,
+      "name": "notifications_unread_idx",
+      "entityType": "indexes",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "user_branches_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "branch_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "branches",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "user_branches_branch_id_branches_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "idempotency_keys_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "refresh_tokens_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "refresh_tokens"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "class_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "classes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "class_teachers_class_id_classes_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "teacher_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "teachers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "class_teachers_teacher_id_teachers_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "branch_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "branches",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "classes_branch_id_branches_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "student_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "students",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "enrollments_student_id_students_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "class_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "classes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "enrollments_class_id_classes_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "guardians_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "branch_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "branches",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "rooms_branch_id_branches_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "student_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "students",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "student_guardians_student_id_students_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "guardian_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "guardians",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "student_guardians_guardian_id_guardians_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "students_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "teachers_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "teachers"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "period_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "payroll_periods",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "payroll_items_period_id_payroll_periods_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "teacher_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "teachers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "payroll_items_teacher_id_teachers_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "approved_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "payroll_periods_approved_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "teacher_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "teachers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "teacher_rates_teacher_id_teachers_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "session_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "sessions",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "attendance_records_session_id_sessions_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "enrollment_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "enrollments",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "attendance_records_enrollment_id_enrollments_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "student_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "students",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "attendance_records_student_id_students_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "updated_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "attendance_records_updated_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "class_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "classes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "class_schedules_class_id_classes_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "room_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "rooms",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "class_schedules_room_id_rooms_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "teacher_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "teachers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "class_schedules_teacher_id_teachers_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "session_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "sessions",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "reminder_messages_session_id_sessions_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "student_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "students",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "reminder_messages_student_id_students_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "class_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "classes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_class_id_classes_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "schedule_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "class_schedules",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_schedule_id_class_schedules_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "teacher_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "teachers",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_teacher_id_teachers_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "room_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "rooms",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_room_id_rooms_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "attendance_taken_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_attendance_taken_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "payroll_period_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "payroll_periods",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "sessions_payroll_period_id_payroll_periods_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "student_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "students",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "invoices_student_id_students_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "class_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "classes",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "invoices_class_id_classes_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "enrollment_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "enrollments",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "invoices_enrollment_id_enrollments_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "cancelled_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "invoices_cancelled_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "created_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "invoices_created_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "invoice_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "invoices",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "payments_invoice_id_invoices_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "collected_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "payments_collected_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "voided_by"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "payments_voided_by_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "actor_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "name": "audit_logs_actor_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "audit_logs"
+    },
+    {
+      "nameExplicit": false,
+      "columns": [
+        "user_id"
+      ],
+      "schemaTo": "core",
+      "tableTo": "users",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "CASCADE",
+      "name": "notifications_user_id_users_id_fkey",
+      "entityType": "fks",
+      "schema": "core",
+      "table": "notifications"
+    },
+    {
+      "columns": [
+        "user_id",
+        "branch_id"
+      ],
+      "nameExplicit": false,
+      "name": "user_branches_pkey",
+      "entityType": "pks",
+      "schema": "core",
+      "table": "user_branches"
+    },
+    {
+      "columns": [
+        "user_id",
+        "key"
+      ],
+      "nameExplicit": false,
+      "name": "idempotency_keys_pkey",
+      "entityType": "pks",
+      "schema": "core",
+      "table": "idempotency_keys"
+    },
+    {
+      "columns": [
+        "class_id",
+        "teacher_id"
+      ],
+      "nameExplicit": false,
+      "name": "class_teachers_pkey",
+      "entityType": "pks",
+      "schema": "core",
+      "table": "class_teachers"
+    },
+    {
+      "columns": [
+        "student_id",
+        "guardian_id"
+      ],
+      "nameExplicit": false,
+      "name": "student_guardians_pkey",
+      "entityType": "pks",
+      "schema": "core",
+      "table": "student_guardians"
+    },
+    {
+      "columns": [
+        "scope",
+        "period"
+      ],
+      "nameExplicit": false,
+      "name": "code_sequences_pkey",
+      "entityType": "pks",
+      "schema": "core",
+      "table": "code_sequences"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "branches_pkey",
+      "schema": "core",
+      "table": "branches",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "settings_pkey",
+      "schema": "core",
+      "table": "settings",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "users_pkey",
+      "schema": "core",
+      "table": "users",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "refresh_tokens_pkey",
+      "schema": "core",
+      "table": "refresh_tokens",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "classes_pkey",
+      "schema": "core",
+      "table": "classes",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "enrollments_pkey",
+      "schema": "core",
+      "table": "enrollments",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "guardians_pkey",
+      "schema": "core",
+      "table": "guardians",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "rooms_pkey",
+      "schema": "core",
+      "table": "rooms",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "students_pkey",
+      "schema": "core",
+      "table": "students",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "teachers_pkey",
+      "schema": "core",
+      "table": "teachers",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "payroll_items_pkey",
+      "schema": "core",
+      "table": "payroll_items",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "payroll_periods_pkey",
+      "schema": "core",
+      "table": "payroll_periods",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "teacher_rates_pkey",
+      "schema": "core",
+      "table": "teacher_rates",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "attendance_records_pkey",
+      "schema": "core",
+      "table": "attendance_records",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "class_schedules_pkey",
+      "schema": "core",
+      "table": "class_schedules",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "reminder_messages_pkey",
+      "schema": "core",
+      "table": "reminder_messages",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "sessions_pkey",
+      "schema": "core",
+      "table": "sessions",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "invoices_pkey",
+      "schema": "core",
+      "table": "invoices",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "payments_pkey",
+      "schema": "core",
+      "table": "payments",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "audit_logs_pkey",
+      "schema": "core",
+      "table": "audit_logs",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "notifications_pkey",
+      "schema": "core",
+      "table": "notifications",
+      "entityType": "pks"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "phone"
+      ],
+      "nullsNotDistinct": false,
+      "name": "users_phone_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "username"
+      ],
+      "nullsNotDistinct": false,
+      "name": "users_username_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "branch_id",
+        "name"
+      ],
+      "nullsNotDistinct": false,
+      "name": "rooms_branch_id_name_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "code"
+      ],
+      "nullsNotDistinct": false,
+      "name": "students_code_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "period_id",
+        "teacher_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "payroll_items_period_id_teacher_id_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "payroll_items"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "period"
+      ],
+      "nullsNotDistinct": false,
+      "name": "payroll_periods_period_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "teacher_id",
+        "effective_from"
+      ],
+      "nullsNotDistinct": false,
+      "name": "teacher_rates_teacher_id_effective_from_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "session_id",
+        "student_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "attendance_records_session_id_student_id_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "schedule_id",
+        "starts_at"
+      ],
+      "nullsNotDistinct": false,
+      "name": "sessions_schedule_id_starts_at_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "code"
+      ],
+      "nullsNotDistinct": false,
+      "name": "invoices_code_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "receipt_no"
+      ],
+      "nullsNotDistinct": false,
+      "name": "payments_receipt_no_key",
+      "entityType": "uniques",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "token_hash"
+      ],
+      "nullsNotDistinct": false,
+      "name": "refresh_tokens_token_hash_key",
+      "schema": "core",
+      "table": "refresh_tokens",
+      "entityType": "uniques"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "user_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "guardians_user_id_key",
+      "schema": "core",
+      "table": "guardians",
+      "entityType": "uniques"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "user_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "students_user_id_key",
+      "schema": "core",
+      "table": "students",
+      "entityType": "uniques"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "user_id"
+      ],
+      "nullsNotDistinct": false,
+      "name": "teachers_user_id_key",
+      "schema": "core",
+      "table": "teachers",
+      "entityType": "uniques"
+    },
+    {
+      "value": "\"id\"",
+      "name": "settings_singleton_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "settings"
+    },
+    {
+      "value": "\"phone\" ~ '^0[0-9]{9}$'",
+      "name": "users_phone_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "value": "\"username\" ~ '^[a-z0-9._-]{3,32}$' AND \"username\" !~ '^[0-9]+$'",
+      "name": "users_username_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "value": "\"role\" = 'student' OR \"phone\" IS NOT NULL",
+      "name": "users_phone_required_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "value": "\"role\" <> 'student' OR \"username\" IS NOT NULL",
+      "name": "users_username_required_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "users"
+    },
+    {
+      "value": "\"fee_amount\" >= 0",
+      "name": "classes_fee_amount_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "value": "\"due_day\" BETWEEN 1 AND 28",
+      "name": "classes_due_day_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "value": "\"color\" ~ '^#[0-9A-Fa-f]{6}$'",
+      "name": "classes_color_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "value": "\"ends_on\" IS NULL OR \"starts_on\" IS NULL OR \"ends_on\" >= \"starts_on\"",
+      "name": "classes_dates_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "classes"
+    },
+    {
+      "value": "\"end_date\" IS NULL OR \"end_date\" >= \"start_date\"",
+      "name": "enrollments_dates_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "enrollments"
+    },
+    {
+      "value": "\"phone\" ~ '^0[0-9]{9}$'",
+      "name": "guardians_phone_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "guardians"
+    },
+    {
+      "value": "\"capacity\" > 0",
+      "name": "rooms_capacity_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "rooms"
+    },
+    {
+      "value": "\"code\" ~ '^HV-[0-9]{4,}$'",
+      "name": "students_code_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "value": "\"phone\" IS NULL OR \"phone\" ~ '^0[0-9]{9}$'",
+      "name": "students_phone_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "students"
+    },
+    {
+      "value": "\"period\" = date_trunc('month', \"period\")::date",
+      "name": "payroll_periods_period_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "value": "\"status\" = 'pending' OR (\"approved_by\" IS NOT NULL AND \"approved_at\" IS NOT NULL)",
+      "name": "payroll_periods_approved_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "payroll_periods"
+    },
+    {
+      "value": "\"rate\" > 0",
+      "name": "teacher_rates_rate_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "teacher_rates"
+    },
+    {
+      "value": "(\"status\" = 'absent') = (\"absence_excused\" IS NOT NULL)",
+      "name": "attendance_absent_excused_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "attendance_records"
+    },
+    {
+      "value": "\"weekday\" BETWEEN 1 AND 7",
+      "name": "class_schedules_weekday_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "value": "\"duration_min\" > 0",
+      "name": "class_schedules_duration_min_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "value": "\"valid_to\" IS NULL OR \"valid_to\" >= \"valid_from\"",
+      "name": "class_schedules_valid_dates_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "class_schedules"
+    },
+    {
+      "value": "\"attempts\" BETWEEN 0 AND 3",
+      "name": "reminder_messages_attempts_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "reminder_messages"
+    },
+    {
+      "value": "\"duration_min\" > 0",
+      "name": "sessions_duration_min_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "value": "\"status\" = 'scheduled' OR \"cancel_reason\" IS NOT NULL",
+      "name": "sessions_cancel_reason_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "sessions"
+    },
+    {
+      "value": "\"code\" ~ '^HD-[0-9]{4}-[0-9]{3,}$'",
+      "name": "invoices_code_format_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "\"total_amount\" > 0",
+      "name": "invoices_total_amount_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "\"period_end\" >= \"period_start\"",
+      "name": "invoices_period_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "\"paid_amount\" BETWEEN 0 AND \"total_amount\"",
+      "name": "invoices_paid_amount_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "(\"cancelled_at\" IS NULL) = (\"cancel_reason\" IS NULL)",
+      "name": "invoices_cancel_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "\"cancelled_at\" IS NULL OR \"paid_amount\" = 0",
+      "name": "invoices_cancel_requires_no_payment_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "invoices"
+    },
+    {
+      "value": "\"amount\" > 0",
+      "name": "payments_amount_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "payments"
+    },
+    {
+      "value": "(\"voided_at\" IS NULL) = (\"void_reason\" IS NULL) AND (\"voided_at\" IS NULL) = (\"voided_by\" IS NULL)",
+      "name": "payments_void_chk",
+      "entityType": "checks",
+      "schema": "core",
+      "table": "payments"
+    }
+  ],
+  "renames": []
+}
