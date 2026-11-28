@@ -12,9 +12,12 @@ if (!jwtAccessSecret) throw new Error('JWT_ACCESS_SECRET is required in producti
 export const env = {
   nodeEnv,
   isProduction,
-  port: Number(process.env.PORT ?? 3000),
-  // must be an explicit origin (not *) for the browser to send the refresh-token cookie
-  corsOrigin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
+  port: Number(process.env.PORT ?? 8080),
+  // comma-separated explicit origins (not *) so the browser sends the refresh-token cookie
+  corsOrigins: (process.env.CORS_ORIGIN ?? 'http://localhost,http://localhost:5173')
+    .split(',')
+    .map((o) => o.trim().replace(/\/$/, ''))
+    .filter(Boolean),
   databaseUrl,
   logLevel: process.env.LOG_LEVEL ?? (nodeEnv === 'test' ? 'silent' : 'info'),
   jwtAccessSecret,

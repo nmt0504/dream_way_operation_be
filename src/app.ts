@@ -10,7 +10,7 @@ import { router } from './routes';
 export const app = express();
 
 app.use(requestLogger);
-app.use(cors({ origin: env.corsOrigin, credentials: true }));
+app.use(cors({ origin: env.corsOrigins, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
